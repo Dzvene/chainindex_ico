@@ -1,0 +1,40 @@
+{
+  "name": "landingpage",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.6",
+    "@mui/material": "^5.10.6",
+    "@openzeppelin/contracts": "^4.7.3",
+    "@walletconnect/web3-provider": "^1.8.0",
+    "authereum": "^0.0.1",
+    "ethers": "^5.7.1",
+    "ipfs-http-client": "^58.0.0",
+    "next": "12.3.0",
+    "prop-types": "^15.8.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-reveal": "^1.2.2",
+    "typewriter-effect": "^2.19.0",
+    "web3": "^1.8.0",
+    "web3modal": "^1.9.9"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0",
+    "autoprefixer": "^10.4.12",
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.0",
+    "hardhat": "^2.11.2",
+    "postcss": "^8.4.16",
+    "sass": "^1.54.9",
+    "tailwindcss": "^3.1.8"
+  }
+}

@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-black;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto my-0 w-11/12 max-w-7xl;
+  }
+
+  .btn-base {
+    @apply capitalize py-3 px-2 font-medium transition-all ease-in duration-500 hover:opacity-80;
+  }
+
+  .label {
+    @apply capitalize font-bold text-center text-main-label lg:text-left 2xl:text-xl;
+  }
+
+  .information-box {
+    @apply bg-main-light text-white p-8 rounded-xl;
+  }
+
+  .ico-step--container {
+    @apply flex flex-col gap-2;
+  }
+
+  .ico-step--box {
+    @apply flex flex-col gap-2;
+  }
+
+  .ico-step--content {
+    @apply flex flex-col gap-4 shadow-lg rounded-xl px-8 py-4;
+  }
+
+  .ico-step--btn-container {
+    @apply flex justify-center items-center;
+  }
+
+  .ico-step--btn {
+    @apply btn-base px-4 text-white rounded-lg;
+  }
+}
+
+.progress {
+  animation: progressBar 3s ease-in-out;
+  animation-fill-mode: both;
+}
+
+@keyframes progressBar {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 40%;
+  }
+}
