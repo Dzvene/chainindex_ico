@@ -1,14 +1,10 @@
-
 import WalletConnectProvider from "@walletconnect/web3-provider"
 import Web3Modal from "web3modal"
 import Authereum from "authereum"
 import { ethers } from 'ethers'
-import { createContext, useState } from "react"
-import { Layout } from "@components/layout"
+import { createContext } from "react"
 
-
-
-export  const UserConnectWalletContext = createContext();
+export const UserConnectWalletContext = createContext();
 
 
   const walletOptions= {
