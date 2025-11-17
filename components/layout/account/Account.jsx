@@ -8,37 +8,35 @@ import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import { UserConnectWalletContext } from "Helpers/MultiWallets";
 export const Account = ({ col }) => {
 
-  const [isLogin, setIsLogin] = useState(false)
-  const [account, setAccount] = useState("")
+  const [isLogin,setIsLogin]= useState(false)
+  const[account,setAccount]=useState("")
 
   const UserConnect = useContext(UserConnectWalletContext)
 
-  const login = async () => {
-    try {
-      await UserConnect.connectMultiWallet()
-      setIsLogin(true)
-    } catch (error) {
-      console.error("Login failed:", error)
-    }
-  }
 
-  const logOut = async () => {
-    await UserConnect.disconnectWallet()
+  const login = async()=>{
+    
+    UserConnect.connectMultiWallet()
+    setIsLogin(true)
+  }
+  
+  const logOut = async()=>{
+    UserConnect.disconnectWallet()
     setIsLogin(false)
+
   }
+useEffect(()=>{
+if(UserConnect.account){
+  setAccount(UserConnect.account)
+  setIsLogin(true)
+  console.log( "Account Account",UserConnect.walletProvider )
+}else{
+  setAccount(UserConnect.account)
 
-  useEffect(() => {
-    if (UserConnect.account) {
-      setAccount(UserConnect.account)
-      setIsLogin(true)
-      console.log("Account Account", UserConnect.walletProvider)
-    } else {
-      setAccount("")
-      setIsLogin(false)
-    }
-  }, [UserConnect.walletProvider, UserConnect.account])
-
-  console.log(" Account Account UserConnect.Account", UserConnect.account)
+  setIsLogin(false)
+}
+},[UserConnect.walletProvider,UserConnect.account])
+   console.log(" Account Account UserConnect.Account",UserConnect.account)
 
 
   return (

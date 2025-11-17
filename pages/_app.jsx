@@ -1,23 +1,28 @@
 import "@styles/globals.css";
-import { UserConnectWalletProvider } from "Helpers/MultiWallets";
-import { createTheme, ThemeProvider } from '@mui/material/styles'
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#F9A829"
+import { UserConnectWalletContext } from "Helpers/MultiWallets";
+import { createTheme,ThemeProvider } from '@mui/material/styles'
+import connectMultiWallet from "Helpers/MultiWallets";
+import { disconnectWallet } from "Helpers/MultiWallets";
+import { walletProvider } from "Helpers/MultiWallets";
+import { account } from "Helpers/MultiWallets";
+const theme =createTheme({
+  palette:{
+    primary:{
+      main:"#F9A829"
     },
-    mode: "light"
+    mode:"light"
   },
 });
 
 function MyApp({ Component, pageProps }) {
   return (
-    <UserConnectWalletProvider>
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </UserConnectWalletProvider>
+    <UserConnectWalletContext.Provider value={{connectMultiWallet,disconnectWallet,walletProvider,account}}>
+    <ThemeProvider theme={theme}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+    </UserConnectWalletContext.Provider>
+
+
   )
 }
 
